@@ -1,0 +1,56 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/zhoumingzhao/Desktop/22-23 1月/Find_and_Replace.cpp
+bits/stdc++.h
+-
+
+/Users/zhoumingzhao/Desktop/22-23 1月/Following_Directions.cpp
+bits/stdc++.h
+-
+
+/Users/zhoumingzhao/Desktop/22-23 1月/Moo_Route.cpp
+bits/stdc++.h
+-
+
+/Users/zhoumingzhao/Desktop/22-23 1月/T1.cpp
+bits/stdc++.h
+-
+
+/Users/zhoumingzhao/Desktop/22-23 1月/T2.cpp
+bits/stdc++.h
+-
+
+/Users/zhoumingzhao/Desktop/22-23 1月/T3.cpp
+bits/stdc++.h
+-
+
+/Users/zhoumingzhao/Desktop/22-23 1月/b-1.cpp
+bits/stdc++.h
+-
+
+/Users/zhoumingzhao/Desktop/22-23 1月/b-2.cpp
+bits/stdc++.h
+-
+
+/Users/zhoumingzhao/Desktop/22-23 1月/b-3.cpp
+bits/stdc++.h
+-
+
+/Users/zhoumingzhao/Desktop/22-23 1月/p-1.cpp
+bits/stdc++.h
+-
+
+/Users/zhoumingzhao/Desktop/22-23 1月/p-2.cpp
+bits/stdc++.h
+-
+
+/Users/zhoumingzhao/Desktop/22-23 1月/p-3.cpp
+bits/stdc++.h
+-
+
