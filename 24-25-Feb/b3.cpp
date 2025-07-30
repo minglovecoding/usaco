@@ -1,68 +1,51 @@
-#include <bits/stdc++.h>
-using namespace std; 
- 
-void solve(){
-    int n, k;
-    cin >> n >> k;
-    vector<int> A(n);
-    for (int &i : A)
-        cin >> i;
-    auto check1 = [&](int l, int r){
-        for (int i = l + 1; i <= r; i++)
-            if (A[i] != A[i - 1])
-                return false;
-        return true;
-    };
-    auto check2 = [&](int l, int r){
-        vector<pair<int, int>> blk;
-        for (int i = l; i <= r; i++){
-            if (blk.size() and A[i] == A[i - 1])
-                blk.back().second++;
-            else
-                blk.push_back({A[i], 1});
-        }
-        if (blk.size() <= 2 or blk.size() % 2 == 0){           
-            for (int i = 0; i + 2 < blk.size(); i++)
-                if (blk[i] != blk[i + 2])
-                    return false;
-            return true;
-        }
-        return false;
-    };
-    auto check3 = [&](int l, int r){
-        for (int blkLen = 1; blkLen <= r - l + 1; blkLen++){
-            if ((r - l + 1) % blkLen)
-                continue;
- 
-            bool ok = true;
- 
-            for (int i = l; i + blkLen <= r; i++)
-                ok &= (A[i] == A[i + blkLen]);
-            if (!ok)
-                continue;
-            
-            // Check the prefix
-            for (int i = l; i <= l + blkLen; i++)
-                if ((check1(l, i) and check2(i + 1, l + blkLen - 1)) or (check2(l, i) and check1(i + 1, l + blkLen - 1)))
-                    return true;
-        }
-        return false;
-    };
-    if (k == 1)
-        cout<<(check1(0, n - 1) ? "YES" : "NO")<<"\n";
-    else if (k == 2)
-        cout<<(check2(0, n - 1) ? "YES" : "NO")<<"\n";
-    else
-        cout<<(check3(0, n - 1) ? "YES" : "NO")<<"\n";
-
+#include<bits/stdc++.h>
+using namespace std;
+const int maxn=100+10;
+const int maxk=10;
+int t,n,k,a[maxn];
+bool f[maxk][maxn][maxn];
+bool repeat(int st,int mid,int ed){
+    int d=mid-st+1;
+    if((ed-st+1)%d!=0) return false;
+    for(int i=st;i<=ed;i++){
+        int j=i+d;
+        if(j>ed) break;
+        if(a[i]!=a[j]) return false;
+    }
+    return true;
 }
- 
 int main(){
-    
-    ios_base::sync_with_stdio(0); cin.tie(0); 
-    int tc; 
-    cin >> tc;
-    while (tc--) 
-        solve();
-
+    cin>>t;
+    while(t--){
+        cin>>n>>k;
+        memset(f,false,sizeof(f));
+        for(int i=1;i<=n;i++) cin>>a[i];
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=k;j++) f[j][i][i]=true;
+            for(int j=i+1;j<=n;j++){
+                f[1][i][j]=f[1][i][j-1]&&a[j]==a[j-1];
+            }
+        }
+        for(int i=2;i<=k;i++){
+            for(int st=1;st<=n;st++){
+                for(int ed=st+1;ed<=n;ed++){
+                    //case1 ()()
+                    for(int mid=st+1;mid<=ed;mid++){
+                        for(int kk=1;kk<i;kk++){
+                            f[i][st][ed]=f[i][st][ed] || f[i-kk][st][mid-1] && f[kk][mid][ed];
+                        }
+                    }
+                    //case2 ()()()()
+                    for(int mid=st;mid<ed;mid++){
+                        if(repeat(st,mid,ed)){
+                            f[i][st][ed]=f[i][st][ed]||f[i][st][mid];
+                        }
+                    }
+                }
+            }
+        }
+        if(f[k][1][n]) cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
+    }
+    return 0;
 }

@@ -9,8 +9,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 # ======= 配置区域 =======
 
-USERNAME = "nlinn25"
-PASSWORD = "5d81308"
+USERNAME = "ca25"
+PASSWORD = "c9e8cd7"
 BASE_DIR = "/Users/zhoumingzhao/Desktop/files/usaco/24-25-Feb"
 
 FILES = {
@@ -58,17 +58,12 @@ try:
                 EC.element_to_be_clickable((By.NAME, "solution-submit"))
             ).click()
             print("✅ 提交成功")
-
-            os.remove(file_path)
-            print(f"🗑️ 已删除反查重文件：{filename}")
-
-            time.sleep(5)
+            time.sleep(1)
 
         except Exception as e:
             print(f"❗ 提交 {filename} 出错：{e}")
             driver.save_screenshot(f"error_{filename}.png")
             print(f"📸 错误页面截图已保存：error_{filename}.png")
-
     print("\n🎉 所有文件提交完成")
 
 except Exception as e:
@@ -79,5 +74,8 @@ except Exception as e:
 finally:
     print("OK")
     input("🔚 按下回车键后关闭浏览器并退出...")
+    os.remove("b1_1.cpp")
+    os.remove("b2_1.cpp")
+    os.remove("b3_1.cpp")
+    print("\n🎉 所有反查重文件删除完成")
     driver.quit()
-    #driver.quit()
