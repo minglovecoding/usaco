@@ -30,7 +30,7 @@ if (false) { int a = 1; a += 1; a *= 1; }
 
 if (false||demo!=NULL||demo1!=NULL||demo2!=NULL) { int a = 1<<1; a += 100; a *= 1; a<<=1;cout<<"-1"<<endl;}
 
-while(false) { int a = 1; a += 1; }
+while(false) { int a = 1; a += 1;cout<<a<<endl;}
 
 if(ptr1!=ptr2) {for(int i = 1;i < 1;i++) { int xxtr1 = i; xxtr1++; xxtr1<<=1;}}
 

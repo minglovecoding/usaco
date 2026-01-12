@@ -14,9 +14,9 @@ PASSWORD = "d1d5f6d"
 BASE_DIR = "/Users/zhoumingzhao/Desktop/usaco/"
 
 FILES = {
-    "https://usaco.org/index.php?page=viewproblem&cpid=1527": "b1_1.cpp",
-    "https://usaco.org/index.php?page=viewproblem&cpid=1528": "b2_1.cpp",
-    "https://usaco.org/index.php?page=viewproblem&cpid=1529": "b3_1.cpp",
+    "https://usaco.org/index.php?page=viewproblem&cpid=1530": "s1_1.cpp",
+    "https://usaco.org/index.php?page=viewproblem&cpid=1531": "s2_1.cpp",
+    "https://usaco.org/index.php?page=viewproblem&cpid=1532": "s3_1.cpp",
 }
 # =========================
 
@@ -74,8 +74,8 @@ except Exception as e:
 finally:
     print("OK")
     input("🔚 按下回车键后关闭浏览器并退出...")
-    os.remove("b1_1.cpp")
-    os.remove("b2_1.cpp")
-    os.remove("b3_1.cpp")
+    os.remove("s1_1.cpp")
+    os.remove("s2_1.cpp")
+    os.remove("s3_1.cpp")
     print("\n🎉 所有反查重文件删除完成")
     driver.quit()

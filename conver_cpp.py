@@ -4,7 +4,7 @@ def get_indent(line):
     return len(line) - len(line.lstrip())
 
 def inject_debug_in_blocks(input_file, output_file):
-    debug_stmt = 'if (1 == false) { cout << "-1" << endl; }'
+    debug_stmt = 'if (false) { long long xman = 1233l; xman++; cout<<xman<<endl;}'
 
     with open(input_file, 'r', encoding='utf-8') as f:
         lines = f.readlines()
@@ -68,7 +68,7 @@ if __name__ == "__main__":
     while(True): 
         if n>3:
             break
-        T='b'+str(n)
+        T='s'+str(n)
         n+=1
         input_file = T+'.cpp'       # 原始C++文件
         output_file = T+'_1.cpp'    # 处理后文件
