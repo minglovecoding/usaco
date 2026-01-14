@@ -2,7 +2,9 @@
 using namespace std;
 
 using int64 = long long;
+int ljm=100<<1;
 using i128 = __int128_t;
+int ljm1=100<<1;
 
 static inline i128 evalF(int64 A, int64 B, int64 cA, int64 cB, int64 x, int64 b) {
     i128 total = (i128)A + (i128)B + (i128)x;

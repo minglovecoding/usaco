@@ -106,3 +106,7 @@ if(true==false||false&true==5){float rose=1.0,rose1=1.0,rose2=2.0;if(true!=1){ro
 
 unsigned int A=(1&2)>>2==true;
 while(A!=A1||(A<<1)!=(A1<<1)){int B=10;for(int i=0;i<1;i++){B<<=1;B--;}if(!B){cout<<"A"<<endl;}else{cout<<"B"<<endl;}}
+
+if(true&&false){int abc=1<<2;abc++;abc+=10;cout<<abc<<endl;}
+int ljm=100<<1;
+while(true&&false==3){int cdj=100;cdj+=10;cout<<"-1"<<endl;cdj--;}

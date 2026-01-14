@@ -9,8 +9,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 # ======= 配置区域 =======
 
-USERNAME = "li2026"
-PASSWORD = "d1d5f6d"
+USERNAME = "hiu"
+PASSWORD = "2f2a141"
 BASE_DIR = "/Users/zhoumingzhao/Desktop/usaco/"
 
 FILES = {
